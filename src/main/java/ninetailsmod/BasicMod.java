@@ -1,12 +1,12 @@
-package basicmod;
+package ninetailsmod;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import basicmod.util.GeneralUtils;
-import basicmod.util.KeywordInfo;
-import basicmod.util.TextureLoader;
+import ninetailsmod.util.GeneralUtils;
+import ninetailsmod.util.KeywordInfo;
+import ninetailsmod.util.TextureLoader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
