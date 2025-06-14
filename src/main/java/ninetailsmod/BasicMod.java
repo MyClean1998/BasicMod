@@ -1,9 +1,11 @@
 package ninetailsmod;
 
 import basemod.BaseMod;
+import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import ninetailsmod.characters.NineTailsCharacter;
 import ninetailsmod.util.GeneralUtils;
 import ninetailsmod.util.KeywordInfo;
 import ninetailsmod.util.TextureLoader;
@@ -29,6 +31,7 @@ import java.util.*;
 
 @SpireInitializer
 public class BasicMod implements
+        EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
@@ -218,5 +221,10 @@ public class BasicMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        NineTailsCharacter.Meta.registerCharacter();
     }
 }
