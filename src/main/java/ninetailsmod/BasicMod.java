@@ -50,6 +50,8 @@ public class BasicMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new BasicMod();
+
+        NineTailsCharacter.Meta.registerColor();
     }
 
     public BasicMod() {

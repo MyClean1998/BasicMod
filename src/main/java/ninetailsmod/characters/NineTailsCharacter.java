@@ -37,7 +37,7 @@ public class NineTailsCharacter extends CustomPlayer {
     public static final int ORB_SLOTS = 0;
 
     //Strings
-    private static final String ID = makeID("CharacterID"); //This should match whatever you have in the CharacterStrings.json file
+    private static final String ID = makeID("Ninetail"); //This should match whatever you have in the CharacterStrings.json file
     private static String[] getNames() { return CardCrawlGame.languagePack.getCharacterString(ID).NAMES; }
     private static String[] getText() { return CardCrawlGame.languagePack.getCharacterString(ID).TEXT; }
 
@@ -46,7 +46,7 @@ public class NineTailsCharacter extends CustomPlayer {
         //These are used to identify your character, as well as your character's card color.
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
-        public static PlayerClass YOUR_CHARACTER;
+        public static PlayerClass NINE_TAILS_CHARACTER;
         @SpireEnum(name = "CHARACTER_GRAY_COLOR") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
         @SpireEnum(name = "CHARACTER_GRAY_COLOR") @SuppressWarnings("unused")
@@ -117,7 +117,7 @@ public class NineTailsCharacter extends CustomPlayer {
     //Actual character class code below this point
 
     public NineTailsCharacter() {
-        super(getNames()[0], Meta.YOUR_CHARACTER,
+        super(getNames()[0], Meta.NINE_TAILS_CHARACTER,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
 
