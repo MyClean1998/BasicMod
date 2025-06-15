@@ -15,6 +15,10 @@
   },
   "${modID}:Dash": {
     "NAME": "Dash",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
+  },
+  "${modID}:CommonAttack": {
+    "NAME": "CommonAttack",
     "DESCRIPTION": "Deal !D! damage."
   },
   "${modID}:UncommonCard1": {
@@ -27,19 +31,19 @@
   },
   "${modID}:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! blocks."
+    "DESCRIPTION": "Gain !B! block."
   },
   "${modID}:CommonSkill": {
     "NAME": "CommonSkill",
-    "DESCRIPTION": "Gain !B! blocks."
+    "DESCRIPTION": "Gain !B! block."
   },
-  "${modID}:UncommonSkill": {
-    "NAME": "UncommonSkill",
-    "DESCRIPTION": "Gain !B! blocks."
+  "${modID}:Disguise": {
+    "NAME": "Disguise",
+    "DESCRIPTION": "Gain !B! block. End your turn."
   },
   "${modID}:RareSkill": {
     "NAME": "RareSkill",
-    "DESCRIPTION": "Gain !B! blocks."
+    "DESCRIPTION": "Gain !B! block."
   },
   "${modID}:CommonPower": {
     "NAME": "CommonPower",
