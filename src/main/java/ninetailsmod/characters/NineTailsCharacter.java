@@ -9,7 +9,9 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
@@ -17,11 +19,25 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.LizardTail;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.screens.DeathScreen;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
+import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
+import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import ninetailsmod.relics.NineTailsRelic;
 
 import java.util.ArrayList;
 
@@ -29,6 +45,8 @@ import static ninetailsmod.BasicMod.characterPath;
 import static ninetailsmod.BasicMod.makeID;
 
 public class NineTailsCharacter extends CustomPlayer {
+    private static final Logger logger = LogManager.getLogger(NineTailsCharacter.class.getName());
+
     //Stats
     public static final int ENERGY_PER_TURN = 3;
     public static final int MAX_HP = 20;
@@ -152,7 +170,7 @@ public class NineTailsCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(NineTailsRelic.ID);
 
         return retVal;
     }
@@ -254,8 +272,139 @@ public class NineTailsCharacter extends CustomPlayer {
     }
 
     @Override
+    public void damage(DamageInfo info) {
+        int damageAmount = info.output;
+        boolean hadBlock = true;
+        if (this.currentBlock == 0)
+            hadBlock = false;
+        if (damageAmount < 0)
+            damageAmount = 0;
+        if (damageAmount > 1 && hasPower("IntangiblePlayer"))
+            damageAmount = 1;
+        damageAmount = decrementBlock(info, damageAmount);
+        if (info.owner == this)
+            for (AbstractRelic r : this.relics)
+                damageAmount = r.onAttackToChangeDamage(info, damageAmount);
+        if (info.owner != null)
+            for (AbstractPower p : info.owner.powers)
+                damageAmount = p.onAttackToChangeDamage(info, damageAmount);
+        for (AbstractRelic r : this.relics)
+            damageAmount = r.onAttackedToChangeDamage(info, damageAmount);
+        for (AbstractPower p : this.powers)
+            damageAmount = p.onAttackedToChangeDamage(info, damageAmount);
+        if (info.owner == this)
+            for (AbstractRelic r : this.relics)
+                r.onAttack(info, damageAmount, this);
+        if (info.owner != null) {
+            for (AbstractPower p : info.owner.powers)
+                p.onAttack(info, damageAmount, this);
+            for (AbstractPower p : this.powers)
+                damageAmount = p.onAttacked(info, damageAmount);
+            for (AbstractRelic r : this.relics)
+                damageAmount = r.onAttacked(info, damageAmount);
+        } else {
+            logger.info("NO OWNER, DON'T TRIGGER POWERS");
+        }
+        for (AbstractRelic r : this.relics)
+            damageAmount = r.onLoseHpLast(damageAmount);
+        this.lastDamageTaken = Math.min(damageAmount, this.currentHealth);
+        if (damageAmount > 0) {
+            for (AbstractPower p : this.powers)
+                damageAmount = p.onLoseHp(damageAmount);
+            for (AbstractRelic r : this.relics)
+                r.onLoseHp(damageAmount);
+            for (AbstractPower p : this.powers)
+                p.wasHPLost(info, damageAmount);
+            for (AbstractRelic r : this.relics)
+                r.wasHPLost(damageAmount);
+            if (info.owner != null)
+                for (AbstractPower p : info.owner.powers)
+                    p.onInflictDamage(info, damageAmount, this);
+            if (info.owner != this)
+                useStaggerAnimation();
+            if (info.type == DamageInfo.DamageType.HP_LOSS)
+                GameActionManager.hpLossThisCombat += damageAmount;
+            GameActionManager.damageReceivedThisTurn += damageAmount;
+            GameActionManager.damageReceivedThisCombat += damageAmount;
+            this.currentHealth -= damageAmount;
+            if (damageAmount > 0 && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+                updateCardsOnDamage();
+                this.damagedThisCombat++;
+            }
+            AbstractDungeon.effectList.add(new StrikeEffect(this, this.hb.cX, this.hb.cY, damageAmount));
+            if (this.currentHealth < 0) {
+                this.currentHealth = 0;
+            } else if (this.currentHealth < this.maxHealth / 4) {
+                AbstractDungeon.topLevelEffects.add(new BorderFlashEffect(new Color(1.0F, 0.1F, 0.05F, 0.0F)));
+            }
+            healthBarUpdatedEvent();
+            if (this.currentHealth <= this.maxHealth / 2.0F &&
+                    !this.isBloodied) {
+                this.isBloodied = true;
+                for (AbstractRelic r : this.relics) {
+                    if (r != null)
+                        r.onBloodied();
+                }
+            }
+            if (this.currentHealth < 1) {
+                if (!hasRelic("Mark of the Bloom"))
+                    if (hasPotion("FairyPotion")) {
+                        for (AbstractPotion p : this.potions) {
+                            if (p.ID.equals("FairyPotion")) {
+                                p.flash();
+                                this.currentHealth = 0;
+                                p.use(this);
+                                AbstractDungeon.topPanel.destroyPotion(p.slot);
+                                return;
+                            }
+                        }
+                    } else if (hasRelic("Lizard Tail")) {
+                        if (((LizardTail)getRelic("Lizard Tail")).counter == -1) {
+                            this.currentHealth = 0;
+                            getRelic("Lizard Tail").onTrigger();
+                            return;
+                        }
+                    } else if (hasRelic(NineTailsRelic.ID)) {
+                        if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter > 1) {
+                            this.currentHealth = 0;
+                            getRelic(NineTailsRelic.ID).onTrigger();
+                            return;
+                        } else if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter == 1) {
+                            getRelic(NineTailsRelic.ID).setCounter(0);
+                        }
+                    }
+                this.isDead = true;
+                AbstractDungeon.deathScreen = new DeathScreen(AbstractDungeon.getMonsters());
+                this.currentHealth = 0;
+                if (this.currentBlock > 0) {
+                    loseBlock();
+                    AbstractDungeon.effectList.add(new HbBlockBrokenEffect(this.hb.cX - this.hb.width / 2.0F + BLOCK_ICON_X, this.hb.cY - this.hb.height / 2.0F + BLOCK_ICON_Y));
+                }
+            }
+        } else if (this.currentBlock > 0) {
+            AbstractDungeon.effectList.add(new BlockedWordEffect(this, this.hb.cX, this.hb.cY, uiStrings.TEXT[0]));
+        } else if (hadBlock) {
+            AbstractDungeon.effectList.add(new BlockedWordEffect(this, this.hb.cX, this.hb.cY, uiStrings.TEXT[0]));
+            AbstractDungeon.effectList.add(new HbBlockBrokenEffect(this.hb.cX - this.hb.width / 2.0F + BLOCK_ICON_X, this.hb.cY - this.hb.height / 2.0F + BLOCK_ICON_Y));
+        } else {
+            AbstractDungeon.effectList.add(new StrikeEffect(this, this.hb.cX, this.hb.cY, 0));
+        }
+    }
+
+    @Override
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new NineTailsCharacter();
+    }
+
+    private void updateCardsOnDamage() {
+        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+            for (AbstractCard c : this.hand.group)
+                c.tookDamage();
+            for (AbstractCard c : this.discardPile.group)
+                c.tookDamage();
+            for (AbstractCard c : this.drawPile.group)
+                c.tookDamage();
+        }
     }
 }

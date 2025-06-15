@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:NineTailsRelic": {
+    "NAME": "Nine Tails Relic",
+    "FLAVOR": "I followed a tutorial!",
+    "DESCRIPTIONS": [
+      "Whenever you die, lose #b%d #ytail."
+    ]
   }
 }
