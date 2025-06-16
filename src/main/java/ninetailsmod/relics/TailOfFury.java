@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import ninetailsmod.characters.NineTailsCharacter;
 
 import static ninetailsmod.BasicMod.makeID;
@@ -35,7 +36,9 @@ public class TailOfFury extends BaseRelic  {
 
     @Override
     public void onEquip() {
-        this.addOneStrength(); // Take effect immediately
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            this.addOneStrength(); // Take effect immediately
+        }
     }
 
     public AbstractRelic makeCopy() {
