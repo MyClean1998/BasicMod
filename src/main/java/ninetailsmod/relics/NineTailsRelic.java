@@ -32,6 +32,7 @@ public class NineTailsRelic extends BaseRelic {
     public void onTrigger() {
         flash();
         addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, this));
+        AbstractDungeon.player.maxHealth--;
         int healAmt = AbstractDungeon.player.maxHealth;
         if (healAmt < 1)
             healAmt = 1;
