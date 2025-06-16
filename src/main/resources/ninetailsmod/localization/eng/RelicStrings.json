@@ -26,5 +26,12 @@
     "DESCRIPTIONS": [
       "Gain #b%d dexterity immediately and at the start of each combat."
     ]
+  },
+  "${modID}:TailOfEnergy": {
+    "NAME": "Tail Of Energy",
+    "FLAVOR": "I followed a tutorial!",
+    "DESCRIPTIONS": [
+      "Gain #b%d energy and become weakened for #y%d turn at the start of each combat."
+    ]
   }
 }
