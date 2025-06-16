@@ -699,4 +699,13 @@ public abstract class BaseCard extends CustomCard {
             return forceModified || base != value;
         }
     }
+
+    /**
+     * Changes below are added by the Ninetails mode.
+     */
+
+    public enum CustomCardTags {
+        CLAW
+    }
+    public ArrayList<CustomCardTags> customTags = new ArrayList<>();
 }

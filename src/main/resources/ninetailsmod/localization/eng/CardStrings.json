@@ -17,13 +17,13 @@
     "NAME": "Dash",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
   },
-  "${modID}:CommonAttack": {
-    "NAME": "CommonAttack",
+  "${modID}:Claw": {
+    "NAME": "Claw",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${modID}:UncommonCard1": {
-    "NAME": "UncommonCard1",
-    "DESCRIPTION": "Deal !D! damage."
+  "${modID}:Pounce": {
+    "NAME": "Pounce",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
   },
   "${modID}:RareCard1": {
     "NAME": "RareCard1",
