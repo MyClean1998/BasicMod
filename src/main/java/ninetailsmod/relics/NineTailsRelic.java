@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import ninetailsmod.characters.NineTailsCharacter;
 
@@ -27,6 +28,7 @@ public class NineTailsRelic extends BaseRelic {
         return String.format(DESCRIPTIONS[0], 1);
     }
 
+    @Override
     public void onTrigger() {
         flash();
         addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, this));
@@ -34,6 +36,11 @@ public class NineTailsRelic extends BaseRelic {
         if (healAmt < 1)
             healAmt = 1;
         AbstractDungeon.player.heal(healAmt, true);
+        switch (this.counter) {
+            case 9:
+                AbstractRelic tailOfFury = RelicLibrary.getRelic(TailOfFury.ID).makeCopy();
+                tailOfFury.instantObtain();
+        }
         this.counter--;
     }
 

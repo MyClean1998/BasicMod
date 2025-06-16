@@ -8,5 +8,53 @@
       "If you need to use it for stuff.",
       "Blizzard is a good example for this."
     ]
+  },
+  "${modID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Dash": {
+    "NAME": "Dash",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
+  },
+  "${modID}:CommonAttack": {
+    "NAME": "CommonAttack",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:UncommonCard1": {
+    "NAME": "UncommonCard1",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:RareCard1": {
+    "NAME": "RareCard1",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  },
+  "${modID}:CommonSkill": {
+    "NAME": "CommonSkill",
+    "DESCRIPTION": "Gain !B! block."
+  },
+  "${modID}:Disguise": {
+    "NAME": "Disguise",
+    "DESCRIPTION": "Gain !B! block. End your turn."
+  },
+  "${modID}:RareSkill": {
+    "NAME": "RareSkill",
+    "DESCRIPTION": "Gain !B! block."
+  },
+  "${modID}:CommonPower": {
+    "NAME": "CommonPower",
+    "DESCRIPTION": "Gain !M! strength."
+  },
+  "${modID}:UncommonCard3": {
+    "NAME": "UncommonCard3",
+    "DESCRIPTION": "Gain !M! strength."
+  },
+  "${modID}:RareCard3": {
+    "NAME": "RareCard3",
+    "DESCRIPTION": "Gain !M! strength."
   }
 }

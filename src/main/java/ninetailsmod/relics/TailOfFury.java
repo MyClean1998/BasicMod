@@ -23,13 +23,28 @@ public class TailOfFury extends BaseRelic  {
         super(ID, NAME, NineTailsCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
+    @Override
+    public String getUpdatedDescription() {
+        return String.format(DESCRIPTIONS[0], 1);
+    }
+
+    @Override
     public void atBattleStart() {
-        flash();
-        addToTop((AbstractGameAction)new ApplyPowerAction((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, (AbstractPower)new StrengthPower((AbstractCreature)AbstractDungeon.player, 1), 1));
-        addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, this));
+        this.addOneStrength();
+    }
+
+    @Override
+    public void onEquip() {
+        this.addOneStrength(); // Take effect immediately
     }
 
     public AbstractRelic makeCopy() {
         return new TailOfFury();
+    }
+
+    private void addOneStrength() {
+        flash();
+        addToTop((AbstractGameAction)new ApplyPowerAction((AbstractCreature)AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, (AbstractPower)new StrengthPower((AbstractCreature)AbstractDungeon.player, 1), 1));
+        addToTop((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, this));
     }
 }

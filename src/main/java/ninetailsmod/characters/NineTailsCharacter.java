@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,9 +32,11 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
 import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
+import ninetailsmod.cards.Defend;
+import ninetailsmod.cards.Strike;
+import ninetailsmod.cards.attacks.Dash;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import ninetailsmod.relics.NineTailsRelic;
 
@@ -157,11 +158,11 @@ public class NineTailsCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Dash.ID);
 
         return retVal;
     }
