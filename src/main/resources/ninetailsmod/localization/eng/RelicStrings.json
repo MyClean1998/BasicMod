@@ -10,7 +10,7 @@
     "NAME": "Nine Tails Relic",
     "FLAVOR": "I followed a tutorial!",
     "DESCRIPTIONS": [
-      "Whenever you die, lose #b%d #ptail."
+      "Whenever you die, lose #b%d #ptail and #y%d max HP."
     ]
   },
   "${modID}:TailOfFury": {
@@ -18,6 +18,13 @@
     "FLAVOR": "I followed a tutorial!",
     "DESCRIPTIONS": [
       "Gain #b%d strength immediately and at the start of each combat."
+    ]
+  },
+  "${modID}:TailOfAgility": {
+    "NAME": "Tail Of Agility",
+    "FLAVOR": "I followed a tutorial!",
+    "DESCRIPTIONS": [
+      "Gain #b%d dexterity immediately and at the start of each combat."
     ]
   }
 }

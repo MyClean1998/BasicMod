@@ -25,7 +25,7 @@ public class NineTailsRelic extends BaseRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(DESCRIPTIONS[0], 1);
+        return String.format(DESCRIPTIONS[0], 1, 1);
     }
 
     @Override
@@ -37,12 +37,17 @@ public class NineTailsRelic extends BaseRelic {
         if (healAmt < 1)
             healAmt = 1;
         AbstractDungeon.player.heal(healAmt, true);
+        this.counter--;
         switch (this.counter) {
-            case 9:
+            case 8:
                 AbstractRelic tailOfFury = RelicLibrary.getRelic(TailOfFury.ID).makeCopy();
                 tailOfFury.instantObtain();
+                break;
+            case 7:
+                AbstractRelic tailOfAgility = RelicLibrary.getRelic(TailOfAgility.ID).makeCopy();
+                tailOfAgility.instantObtain();
+                break;
         }
-        this.counter--;
     }
 
     public AbstractRelic makeCopy() {
