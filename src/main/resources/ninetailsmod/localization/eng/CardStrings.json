@@ -13,8 +13,8 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${modID}:Dash": {
-    "NAME": "Dash",
+  "${modID}:Zoomie": {
+    "NAME": "Zoomie",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
   },
   "${modID}:Claw": {
@@ -25,17 +25,17 @@
     "NAME": "Pounce",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
   },
-  "${modID}:RareCard1": {
-    "NAME": "RareCard1",
-    "DESCRIPTION": "Deal !D! damage."
+  "${modID}:MelodyAttack": {
+    "NAME": "MelodyAttack",
+    "DESCRIPTION": "Make a random enemy lose !D! hp !M! times."
   },
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block."
   },
-  "${modID}:CommonSkill": {
-    "NAME": "CommonSkill",
-    "DESCRIPTION": "Gain !B! block."
+  "${modID}:BaggedEscape": {
+    "NAME": "BaggedEscape",
+    "DESCRIPTION": "Reduce the next damage you take to !M!."
   },
   "${modID}:Disguise": {
     "NAME": "Disguise",

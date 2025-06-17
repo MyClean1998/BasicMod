@@ -11,9 +11,9 @@ import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
 import ninetailsmod.util.CardStats;
 
-public class Dash extends BaseCard {
+public class Zoomie extends BaseCard {
 
-    public static final String ID = makeID(Dash.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
+    public static final String ID = makeID(Zoomie.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     private static final CardStats info = new CardStats(
             NineTailsCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.ATTACK, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
@@ -31,7 +31,7 @@ public class Dash extends BaseCard {
     private static final int CARD_DRAWN = 1;
 
 
-    public Dash() {
+    public Zoomie() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.

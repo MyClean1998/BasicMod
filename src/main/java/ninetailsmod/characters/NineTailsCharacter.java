@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,7 +33,7 @@ import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 import ninetailsmod.cards.Defend;
 import ninetailsmod.cards.Strike;
-import ninetailsmod.cards.attacks.Dash;
+import ninetailsmod.cards.attacks.Zoomie;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -162,7 +161,7 @@ public class NineTailsCharacter extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(Dash.ID);
+        retVal.add(Zoomie.ID);
 
         return retVal;
     }
