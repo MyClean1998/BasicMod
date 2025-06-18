@@ -35,7 +35,7 @@
   },
   "${modID}:BaggedEscape": {
     "NAME": "BaggedEscape",
-    "DESCRIPTION": "Reduce the next damage you take to !M!."
+    "DESCRIPTION": "Reduce the next !M! damages you take to 5."
   },
   "${modID}:Disguise": {
     "NAME": "Disguise",

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
+import ninetailsmod.powers.BaggedEscapePower;
 import ninetailsmod.util.CardStats;
 
 public class BaggedEscape extends BaseCard {
@@ -22,16 +23,14 @@ public class BaggedEscape extends BaseCard {
 
     private static final int TIMES = 1;
     private static final int UPG_TIMES = 1;
-    private static final int REDUCED_DAMAGE = 5;
 
     public BaggedEscape() {
         super(ID, info);
-
-        setMagic(REDUCED_DAMAGE, UPG_TIMES);
+        setMagic(TIMES, UPG_TIMES);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new BaggedEscapePower(p, this.magicNumber), this.magicNumber));
     }
 }

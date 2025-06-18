@@ -4,5 +4,13 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:BaggedEscapePower": {
+    "NAME": "Bagged Escape",
+    "DESCRIPTIONS": [
+      "Reduce the next damage you take to #b",
+      "Reduce the next #b",
+      " damages you take to #b"
+    ]
   }
 }
