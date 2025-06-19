@@ -29,6 +29,10 @@
     "NAME": "MelodyAttack",
     "DESCRIPTION": "Make a random enemy lose !D! hp !M! times."
   },
+  "${modID}:LaserEyes": {
+    "NAME": "LaserEyes",
+    "DESCRIPTION": "Deal !D! damage to all enemies and apply !M! weak."
+  },
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block."
