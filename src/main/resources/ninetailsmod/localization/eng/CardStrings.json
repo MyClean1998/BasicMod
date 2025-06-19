@@ -49,9 +49,10 @@
     "NAME": "CommonPower",
     "DESCRIPTION": "Gain !M! strength."
   },
-  "${modID}:UncommonCard3": {
-    "NAME": "UncommonCard3",
-    "DESCRIPTION": "Gain !M! strength."
+  "${modID}:GodFather": {
+    "NAME": "GodFather",
+    "DESCRIPTION": "Gain X strength and X dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain X+1 strength and X+1 dexterity."
   },
   "${modID}:RareCard3": {
     "NAME": "RareCard3",
