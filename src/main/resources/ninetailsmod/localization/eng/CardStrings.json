@@ -45,6 +45,11 @@
     "NAME": "Disguise",
     "DESCRIPTION": "Gain !B! block. End your turn."
   },
+  "${modID}:Deworm": {
+    "NAME": "Deworm",
+    "DESCRIPTION": "Clear all negative effects. NL Exhaust NL Ethereal",
+    "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
+  },
   "${modID}:RareSkill": {
     "NAME": "RareSkill",
     "DESCRIPTION": "Gain !B! block."
