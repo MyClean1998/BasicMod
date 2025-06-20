@@ -3,6 +3,7 @@ package ninetailsmod.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import ninetailsmod.BasicMod;
 import ninetailsmod.util.CardStats;
 import ninetailsmod.util.TriFunction;
@@ -704,8 +705,9 @@ public abstract class BaseCard extends CustomCard {
      * Changes below are added by the Ninetails mode.
      */
 
-    public enum CustomCardTags {
-        CLAW
+    public static class CustomTags
+    {
+        @SpireEnum
+        public static AbstractCard.CardTags CLAW;
     }
-    public ArrayList<CustomCardTags> customTags = new ArrayList<>();
 }

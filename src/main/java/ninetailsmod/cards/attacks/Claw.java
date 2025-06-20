@@ -36,7 +36,7 @@ public class Claw extends BaseCard {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
-        customTags.add(CustomCardTags.CLAW);
+        tags.add(CustomTags.CLAW);
     }
 
     @Override

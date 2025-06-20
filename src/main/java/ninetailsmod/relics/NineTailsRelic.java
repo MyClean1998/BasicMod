@@ -51,6 +51,10 @@ public class NineTailsRelic extends BaseRelic {
                 AbstractRelic tailOfEnergy = RelicLibrary.getRelic(TailOfEnergy.ID).makeCopy();
                 tailOfEnergy.instantObtain();
                 break;
+            case 5:
+                AbstractRelic tailOfPrecision = RelicLibrary.getRelic(TailOfPrecision.ID).makeCopy();
+                tailOfPrecision.instantObtain();
+                break;
         }
     }
 

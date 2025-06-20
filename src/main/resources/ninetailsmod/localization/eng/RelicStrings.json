@@ -31,7 +31,14 @@
     "NAME": "Tail Of Energy",
     "FLAVOR": "I followed a tutorial!",
     "DESCRIPTIONS": [
-      "Gain #b%d energy and become weakened for #y%d turn at the start of each combat."
+      "Gain #b%d energy and weak for #b%d turn at the start of each combat."
+    ]
+  },
+  "${modID}:TailOfPrecision": {
+    "NAME": "Tail Of Precision",
+    "FLAVOR": "I followed a tutorial!",
+    "DESCRIPTIONS": [
+      "All Claw cards deal #b%d more damage."
     ]
   }
 }
