@@ -1,9 +1,6 @@
 package ninetailsmod.cards.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -11,7 +8,7 @@ import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
 import ninetailsmod.util.CardStats;
 
-public class RareCard3 extends BaseCard {
+public class Grace extends BaseCard {
 
     public static final String ID = makeID("RareCard3"); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     private static final CardStats info = new CardStats(
@@ -28,7 +25,7 @@ public class RareCard3 extends BaseCard {
     private static final int STRENGTH = 2;
     private static final int UPG_STRENGTH = 1;
 
-    public RareCard3() {
+    public Grace() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setMagic(STRENGTH, UPG_STRENGTH); //Sets the card's damage and how much it changes when upgraded.
     }

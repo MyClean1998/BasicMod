@@ -9,6 +9,61 @@
       "Blizzard is a good example for this."
     ]
   },
+  "${modID}:BaggedEscape": {
+    "NAME": "Bagged Escape",
+    "DESCRIPTION": "The next time you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "The next !M! times you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust"
+  },
+  "${modID}:Claw": {
+    "NAME": "Claw",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  },
+  "${modID}:Deworm": {
+    "NAME": "Deworm",
+    "DESCRIPTION": "Exhaust all status and curse in your hand, draw that many. NL Exhaust"
+  },
+  "${modID}:Disguise": {
+    "NAME": "Disguise",
+    "DESCRIPTION": "Gain !B! block. End your turn."
+  },
+  "${modID}:GodFather": {
+    "NAME": "Godfather",
+    "DESCRIPTION": "Gain X strength and X dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain X+1 strength and X+1 dexterity."
+  },
+  "${modID}:Grace": {
+    "NAME": "Grace",
+    "DESCRIPTION": "If you didn’t play any attack cards in a turn, you no longer discard your hand."
+  },
+  "${modID}:Groom": {
+    "NAME": "Groom",
+    "DESCRIPTION": "Clear all negative effects. NL Exhaust NL Ethereal",
+    "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
+  },
+  "${modID}:LaserEyes": {
+    "NAME": "Laser Eyes",
+    "DESCRIPTION": "Deal !D! damage to all enemies and apply !M! weak."
+  },
+  "${modID}:MelodyAttack": {
+    "NAME": "Melody Attack",
+    "DESCRIPTION": "Make a random enemy lose !D! hp !M! times."
+  },
+  "${modID}:Pounce": {
+    "NAME": "Pounce",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
+  },
+  "${modID}:ProfilePic": {
+    "NAME": "Profile Picture",
+    "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."
+  },
+  "${modID}:RareSkill": {
+    "NAME": "RareSkill",
+    "DESCRIPTION": "Gain !B! block."
+  },
   "${modID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
@@ -16,61 +71,5 @@
   "${modID}:Zoomie": {
     "NAME": "Zoomie",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
-  },
-  "${modID}:Claw": {
-    "NAME": "Claw",
-    "DESCRIPTION": "Deal !D! damage."
-  },
-  "${modID}:Pounce": {
-    "NAME": "Pounce",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
-  },
-  "${modID}:MelodyAttack": {
-    "NAME": "Melody Attack",
-    "DESCRIPTION": "Make a random enemy lose !D! hp !M! times."
-  },
-  "${modID}:LaserEyes": {
-    "NAME": "Laser Eyes",
-    "DESCRIPTION": "Deal !D! damage to all enemies and apply !M! weak."
-  },
-  "${modID}:Defend": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
-  },
-  "${modID}:BaggedEscape": {
-    "NAME": "Bagged Escape",
-    "DESCRIPTION": "The next time you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "The next !M! times you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust"
-
-  },
-  "${modID}:Disguise": {
-    "NAME": "Disguise",
-    "DESCRIPTION": "Gain !B! block. End your turn."
-  },
-  "${modID}:Groom": {
-    "NAME": "Groom",
-    "DESCRIPTION": "Clear all negative effects. NL Exhaust NL Ethereal",
-    "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
-  },
-  "${modID}:Deworm": {
-    "NAME": "Deworm",
-    "DESCRIPTION": "Exhaust all status and curse in your hand, draw that many. NL Exhaust"
-  },
-  "${modID}:RareSkill": {
-    "NAME": "RareSkill",
-    "DESCRIPTION": "Gain !B! block."
-  },
-  "${modID}:ProfilePic": {
-    "NAME": "Profile Picture",
-    "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."
-  },
-  "${modID}:GodFather": {
-    "NAME": "Godfather",
-    "DESCRIPTION": "Gain X strength and X dexterity.",
-    "UPGRADE_DESCRIPTION": "Gain X+1 strength and X+1 dexterity."
-  },
-  "${modID}:RareCard3": {
-    "NAME": "RareCard3",
-    "DESCRIPTION": "Gain !M! strength."
   }
 }
