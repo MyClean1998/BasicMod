@@ -26,11 +26,11 @@
     "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
   },
   "${modID}:MelodyAttack": {
-    "NAME": "MelodyAttack",
+    "NAME": "Melody Attack",
     "DESCRIPTION": "Make a random enemy lose !D! hp !M! times."
   },
   "${modID}:LaserEyes": {
-    "NAME": "LaserEyes",
+    "NAME": "Laser Eyes",
     "DESCRIPTION": "Deal !D! damage to all enemies and apply !M! weak."
   },
   "${modID}:Defend": {
@@ -38,8 +38,10 @@
     "DESCRIPTION": "Gain !B! block."
   },
   "${modID}:BaggedEscape": {
-    "NAME": "BaggedEscape",
-    "DESCRIPTION": "Reduce the next !M! damages you take to 5."
+    "NAME": "Bagged Escape",
+    "DESCRIPTION": "The next time you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "The next !M! times you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust"
+
   },
   "${modID}:Disguise": {
     "NAME": "Disguise",
@@ -58,12 +60,12 @@
     "NAME": "RareSkill",
     "DESCRIPTION": "Gain !B! block."
   },
-  "${modID}:CommonPower": {
-    "NAME": "CommonPower",
-    "DESCRIPTION": "Gain !M! strength."
+  "${modID}:ProfilePic": {
+    "NAME": "Profile Picture",
+    "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."
   },
   "${modID}:GodFather": {
-    "NAME": "GodFather",
+    "NAME": "Godfather",
     "DESCRIPTION": "Gain X strength and X dexterity.",
     "UPGRADE_DESCRIPTION": "Gain X+1 strength and X+1 dexterity."
   },

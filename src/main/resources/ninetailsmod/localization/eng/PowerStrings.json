@@ -8,9 +8,17 @@
   "${modID}:BaggedEscapePower": {
     "NAME": "Bagged Escape",
     "DESCRIPTIONS": [
-      "Reduce the next damage you take to #b",
+      "Reduce the next unblocked damage you take to #b",
       "Reduce the next #b",
-      " damages you take to #b"
+      " unblocked damages you take to #b"
+    ]
+  },
+  "${modID}:ProfilePicPower": {
+    "NAME": "Profile Picture",
+    "DESCRIPTIONS": [
+      "Add a copy of the first card you play each turn to your hand.",
+      "Add #b",
+      " copies of the first card you play each turn to your hand."
     ]
   }
 }

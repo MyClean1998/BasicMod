@@ -27,6 +27,7 @@ public class BaggedEscape extends BaseCard {
     public BaggedEscape() {
         super(ID, info);
         setMagic(TIMES, UPG_TIMES);
+        setExhaust(true);
     }
 
     @Override

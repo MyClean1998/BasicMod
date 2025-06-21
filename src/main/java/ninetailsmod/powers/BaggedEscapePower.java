@@ -1,11 +1,9 @@
 package ninetailsmod.powers;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import ninetailsmod.BasicMod;
-import ninetailsmod.cards.skills.BaggedEscape;
 
 public class BaggedEscapePower extends BasePower {
     public static final String ID = BasicMod.makeID(BaggedEscapePower.class.getSimpleName());
@@ -13,11 +11,6 @@ public class BaggedEscapePower extends BasePower {
 
     public BaggedEscapePower(AbstractCreature owner, int amount) {
         super(ID, PowerType.BUFF, false, owner, amount);
-    }
-
-    public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
     }
 
     public void updateDescription() {
@@ -32,7 +25,7 @@ public class BaggedEscapePower extends BasePower {
         if (damageAmount <= REDUCED_DAMAGE) {
             return damageAmount;
         }
-        addToTop((AbstractGameAction)new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
         return REDUCED_DAMAGE;
     }
 }
