@@ -37,12 +37,16 @@
   },
   "${modID}:Grace": {
     "NAME": "Grace",
-    "DESCRIPTION": "If you didn’t play any attack cards in a turn, you no longer discard your hand."
+    "DESCRIPTION": "If you did not play any attack in this turn, you do not need to discard your hand."
   },
   "${modID}:Groom": {
     "NAME": "Groom",
     "DESCRIPTION": "Clear all negative effects. NL Exhaust NL Ethereal",
     "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
+  },
+  "${modID}:Hide": {
+    "NAME": "Hide",
+    "DESCRIPTION": "Gain !B! block. Block is not removed at the start of your next turn"
   },
   "${modID}:LaserEyes": {
     "NAME": "Laser Eyes",
@@ -60,16 +64,12 @@
     "NAME": "Profile Picture",
     "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."
   },
-  "${modID}:RareSkill": {
-    "NAME": "RareSkill",
-    "DESCRIPTION": "Gain !B! block."
-  },
   "${modID}:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage, block is kept till next turn"
   },
   "${modID}:Zoomie": {
     "NAME": "Zoomie",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
-  }
+  },
 }
