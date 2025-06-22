@@ -37,7 +37,7 @@
   },
   "${modID}:Grace": {
     "NAME": "Grace",
-    "DESCRIPTION": "If you did not play any attack in this turn, you do not need to discard your hand."
+    "DESCRIPTION": "If you did not play any attack in a turn, retain your hand this turn"
   },
   "${modID}:Groom": {
     "NAME": "Groom",
@@ -66,10 +66,10 @@
   },
   "${modID}:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage, block is kept till next turn"
+    "DESCRIPTION": "Deal !D! damage."
   },
   "${modID}:Zoomie": {
     "NAME": "Zoomie",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
-  },
+  }
 }

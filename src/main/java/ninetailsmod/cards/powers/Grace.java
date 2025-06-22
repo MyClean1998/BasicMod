@@ -1,16 +1,18 @@
 package ninetailsmod.cards.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
+import ninetailsmod.powers.GracePower;
 import ninetailsmod.util.CardStats;
 
 public class Grace extends BaseCard {
 
-    public static final String ID = makeID("RareCard3"); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
+    public static final String ID = makeID("Grace"); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     private static final CardStats info = new CardStats(
             NineTailsCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.POWER, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
@@ -26,6 +28,6 @@ public class Grace extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new GracePower(p)));
     }
 }

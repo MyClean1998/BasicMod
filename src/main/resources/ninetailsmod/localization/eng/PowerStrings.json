@@ -20,5 +20,11 @@
       "Add #b",
       " copies of the first card you play each turn to your hand."
     ]
+  },
+  "${modID}:GracePower": {
+    "NAME": "Grace",
+    "DESCRIPTIONS": [
+      "If you did not play any attack cards in a turn, #yretain your hand this turn."
+    ]
   }
 }
