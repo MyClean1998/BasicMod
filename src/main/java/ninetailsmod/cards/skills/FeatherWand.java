@@ -1,16 +1,17 @@
 package ninetailsmod.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
 import ninetailsmod.util.CardStats;
 
-public class Ball extends BaseCard {
+public class FeatherWand extends BaseCard {
 
-    public static final String ID = makeID(Ball.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
+    public static final String ID = makeID(FeatherWand.class.getSimpleName()); //makeID adds the mod ID, so the final ID will be something like "modID:MyCard"
     private static final CardStats info = new CardStats(
             NineTailsCharacter.Meta.CARD_COLOR, //The card color. If you're making your own character, it'll look something like this. Otherwise, it'll be CardColor.RED or similar for a basegame character color.
             CardType.SKILL, //The type. ATTACK/SKILL/POWER/CURSE/STATUS
@@ -19,19 +20,19 @@ public class Ball extends BaseCard {
             0 //The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
-    private static final int CARD_DRAWN = 3;
-    private static final int UPG_CARD_DRAWN= 2;
+    private static final int DEXTERITY = 3;
+    private static final int UPG_DEXTERITY= 2;
 
-    public Ball() {
+    public FeatherWand() {
         super(ID, info);
-        setMagic(CARD_DRAWN, UPG_CARD_DRAWN);
+        setMagic(DEXTERITY, UPG_DEXTERITY);
         setExhaust(true);
         tags.add(CustomTags.TOY);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(this.magicNumber));
-        addToBot(new DiscardAction(p, p, 1, true));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
     }
 }

@@ -75,5 +75,9 @@
   "${modID}:Ball": {
     "NAME": "Ball",
     "DESCRIPTION": "Draw !M! cards. NL Discard a card at random."
+  },
+  "${modID}:FeatherWand": {
+    "NAME": "Feather Wand",
+    "DESCRIPTION": "Gain !M! dexterity, lose !M! dexterity at the end of your turn."
   }
 }

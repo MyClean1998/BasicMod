@@ -709,5 +709,7 @@ public abstract class BaseCard extends CustomCard {
     {
         @SpireEnum
         public static AbstractCard.CardTags CLAW;
+        @SpireEnum
+        public static AbstractCard.CardTags TOY;
     }
 }
