@@ -79,5 +79,9 @@
   "${modID}:FeatherWand": {
     "NAME": "Feather Wand",
     "DESCRIPTION": "Gain !M! dexterity, lose !M! dexterity at the end of your turn."
+  },
+  "${modID}:FlappingBird": {
+    "NAME": "Flapping Bird",
+    "DESCRIPTION": "Deal !D! damage !M! times."
   }
 }
