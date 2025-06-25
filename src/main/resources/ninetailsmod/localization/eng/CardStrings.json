@@ -41,7 +41,7 @@
   },
   "${modID}:Groom": {
     "NAME": "Groom",
-    "DESCRIPTION": "Clear all negative effects. NL Exhaust NL Ethereal",
+    "DESCRIPTION": "Ethereal. NL Clear all negative effects. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
   },
   "${modID}:Hide": {
@@ -74,14 +74,26 @@
   },
   "${modID}:Ball": {
     "NAME": "Ball",
-    "DESCRIPTION": "Draw !M! cards. NL Discard a card at random."
+    "DESCRIPTION": "Draw !M! cards. NL Discard a card at random. NL Exhaust."
   },
   "${modID}:FeatherWand": {
     "NAME": "Feather Wand",
-    "DESCRIPTION": "Gain !M! dexterity, lose !M! dexterity at the end of your turn."
+    "DESCRIPTION": "Gain !M! dexterity, lose !M! dexterity at the end of your turn. NL Exhaust."
   },
   "${modID}:FlappingBird": {
     "NAME": "Flapping Bird",
-    "DESCRIPTION": "Deal !D! damage !M! times."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+  },
+  "${modID}:ElectronicFish": {
+    "NAME": "Electronic Fish",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Exhaust."
+  },
+  "${modID}:ToyMouse": {
+    "NAME": "Toy Mouse",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! vulnerable. NL Exhaust."
+  },
+  "${modID}:CatnipChewStick": {
+    "NAME": "Catnip Chew Stick",
+    "DESCRIPTION": "Draw !M! cards. NL Randomize the cost of your hand. NL Exhaust."
   }
 }
