@@ -369,11 +369,11 @@ public class NineTailsCharacter extends CustomPlayer {
                             return;
                         }
                     } else if (hasRelic(NineTailsRelic.ID)) {
-                        if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter > 5) {
+                        if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter > 1) {
                             this.currentHealth = 0;
                             getRelic(NineTailsRelic.ID).onTrigger();
                             return;
-                        } else if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter <= 5) {
+                        } else if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter == 1) {
                             getRelic(NineTailsRelic.ID).setCounter(0);
                         }
                     }
