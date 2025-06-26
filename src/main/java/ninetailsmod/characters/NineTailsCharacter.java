@@ -159,6 +159,10 @@ public class NineTailsCharacter extends CustomPlayer {
         //If you want multiple of the same card, you have to add it multiple times.
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Zoomie.ID);
@@ -365,11 +369,11 @@ public class NineTailsCharacter extends CustomPlayer {
                             return;
                         }
                     } else if (hasRelic(NineTailsRelic.ID)) {
-                        if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter > 1) {
+                        if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter > 5) {
                             this.currentHealth = 0;
                             getRelic(NineTailsRelic.ID).onTrigger();
                             return;
-                        } else if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter == 1) {
+                        } else if (((NineTailsRelic)getRelic(NineTailsRelic.ID)).counter <= 5) {
                             getRelic(NineTailsRelic.ID).setCounter(0);
                         }
                     }

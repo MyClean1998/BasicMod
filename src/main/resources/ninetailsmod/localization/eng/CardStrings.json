@@ -64,6 +64,11 @@
     "NAME": "Profile Picture",
     "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."
   },
+  "${modID}:Stealth": {
+    "NAME": "Stealth",
+    "DESCRIPTION": "Make all enemies lose their intent.",
+    "UPGRADE_DESCRIPTION": "Make all enemies lose their intent. NL Your next attack deals 8 more damages"
+  },
   "${modID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
