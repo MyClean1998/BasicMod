@@ -95,5 +95,9 @@
   "${modID}:CatnipChewStick": {
     "NAME": "Catnip Chew Stick",
     "DESCRIPTION": "Draw !M! cards. NL Randomize the cost of your hand. NL Exhaust."
+  },
+  "${modID}:Tunnel": {
+    "NAME": "Tunnel",
+    "DESCRIPTION": "Exhaust a card. NL Draw !M! additional cards next turn. NL Exhaust."
   }
 }
