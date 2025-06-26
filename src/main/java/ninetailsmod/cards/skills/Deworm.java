@@ -31,11 +31,7 @@ public class Deworm extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int count = p.hand.getCardsOfType(CardType.STATUS).size() + p.hand.getCardsOfType(CardType.CURSE).size();
-        for (AbstractCard c : p.hand.group) {
-            if (c.type == AbstractCard.CardType.STATUS || c.type == AbstractCard.CardType.CURSE)
-                addToBot(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
-        }
-//       TODO: addToBot(new ExhaustAllStatusAndCurseAction());
+        addToBot(new ExhaustAllStatusAndCurseAction());
         addToBot(new DrawCardAction(p, count));
     }
 }

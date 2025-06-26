@@ -10,11 +10,16 @@ public class ExhaustAllStatusAndCurseAction extends AbstractGameAction {
 
     private float startingDuration = Settings.ACTION_DUR_FAST;
 
+    public ExhaustAllStatusAndCurseAction() {
+        this.duration = Settings.ACTION_DUR_FAST;
+        this.actionType = ActionType.EXHAUST;
+    }
+
     public void update() {
         if (this.duration == this.startingDuration) {
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c.type == AbstractCard.CardType.STATUS || c.type == AbstractCard.CardType.CURSE)
-                    addToTop((AbstractGameAction)new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+                    addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
             }
             this.isDone = true;
         }
