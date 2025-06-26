@@ -25,7 +25,7 @@ public class ProfilePicPower extends BasePower {
         if (!card.purgeOnUse && this.amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= 1) {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 flash();
-                addToBot(new MakeTempCardInHandAction(card.makeCopy(), this.amount, false));
+                addToBot(new MakeTempCardInHandAction(card.makeSameInstanceOf(), this.amount, false));
             }
         }
     }
