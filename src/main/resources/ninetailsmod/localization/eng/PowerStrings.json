@@ -26,5 +26,11 @@
     "DESCRIPTIONS": [
       "If you did not play any attack cards in a turn, #yretain your hand this turn."
     ]
+  },
+  "${modID}:MechanicalMousePower": {
+    "NAME": "Mechanical Mouse",
+    "DESCRIPTIONS": [
+      "Add a random toy card to your hand at the start of each turn."
+    ]
   }
 }

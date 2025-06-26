@@ -99,5 +99,10 @@
   "${modID}:Tunnel": {
     "NAME": "Tunnel",
     "DESCRIPTION": "Exhaust a card. NL Draw !M! additional cards next turn. NL Exhaust."
+  },
+  "${modID}:MechanicalMouse": {
+    "NAME": "Mechanical Mouse",
+    "DESCRIPTION": "Add a random toy card to your hand at the start of each turn.",
+    "UPGRADE_DESCRIPTION": "Add a random toy card to your hand at the start of each turn. NL Innate."
   }
 }
