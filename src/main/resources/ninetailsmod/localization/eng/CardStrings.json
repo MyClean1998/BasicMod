@@ -65,6 +65,10 @@
     "NAME": "Pounce",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
   },
+  "${modID}:WhirlLeap": {
+    "NAME": "Whirl Leap",
+    "DESCRIPTION": "Deal !D! damage to all enemies, if an enemy dies, deal damage again."
+  },
   "${modID}:ProfilePic": {
     "NAME": "Profile Picture",
     "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."

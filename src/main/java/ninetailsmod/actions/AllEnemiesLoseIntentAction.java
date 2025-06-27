@@ -1,11 +1,12 @@
 package ninetailsmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.SetMoveAction;
-import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import ninetailsmod.powers.LoseIntentPower;
+
 
 public class AllEnemiesLoseIntentAction extends AbstractGameAction {
 
@@ -19,11 +20,7 @@ public class AllEnemiesLoseIntentAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startingDuration) {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                mo.setMove((byte)-1, AbstractMonster.Intent.UNKNOWN);
-                mo.createIntent();
-                addToTop(new TextAboveCreatureAction(mo, TextAboveCreatureAction.TextType.INTERRUPTED));
-                addToTop(new SetMoveAction(mo, (byte)-1, AbstractMonster.Intent.UNKNOWN));
-//                mo.intent = AbstractMonster.Intent.UNKNOWN;
+                addToTop(new ApplyPowerAction(mo, source, new LoseIntentPower(mo, 1), 1));
             }
             this.isDone = true;
         }

@@ -25,7 +25,7 @@ public class BaggedEscapePower extends BasePower {
         if (damageAmount <= REDUCED_DAMAGE) {
             return damageAmount;
         }
-        addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        addToTop(new ReducePowerAction(this.owner, this.owner, ID, 1));
         return REDUCED_DAMAGE;
     }
 }

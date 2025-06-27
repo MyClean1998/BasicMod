@@ -32,5 +32,11 @@
     "DESCRIPTIONS": [
       "Add a random toy card to your hand at the start of each turn."
     ]
+  },
+  "${modID}:LoseIntentPower": {
+    "NAME": "Lose Intent",
+    "DESCRIPTIONS": [
+      "Lose intent this turn."
+    ]
   }
 }

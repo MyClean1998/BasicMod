@@ -38,10 +38,10 @@ public class MelodyAttack extends BaseCard {
         this.damageTypeForTurn = DamageInfo.DamageType.HP_LOSS;
     }
 
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        // No-op, because this attack isn't affected by any bonus.
-    }
+//    @Override
+//    public void calculateCardDamage(AbstractMonster mo) {
+//        // No-op, because this attack isn't affected by any bonus.
+//    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
