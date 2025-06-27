@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import ninetailsmod.actions.AllEnemiesLoseIntentAction;
 import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
 import ninetailsmod.powers.BaggedEscapePower;
@@ -32,14 +33,7 @@ public class Stealth extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-//            addToBot(new AbstractGameAction() {
-//                @Override
-//                public void update() {
-////                    mo.intent = AbstractMonster.Intent.STUN;
-//                }
-//            });
-//        }
+        addToBot(new AllEnemiesLoseIntentAction());
         if (upgraded) {
             addToBot(new ApplyPowerAction(p, p, new VigorPower(p, DAMAGE_BONUS), 1));
         }
