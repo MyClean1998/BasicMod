@@ -48,6 +48,11 @@
     "NAME": "Hide",
     "DESCRIPTION": "Gain !B! block. Block is not removed at the start of your next turn"
   },
+  "${modID}:Hiss": {
+    "NAME": "Hiss",
+    "DESCRIPTION": "All enemies lose X strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "All enemies lose X+2 strength. NL Exhaust."
+  },
   "${modID}:LaserEyes": {
     "NAME": "Laser Eyes",
     "DESCRIPTION": "Deal !D! damage to all enemies and apply !M! weak."
