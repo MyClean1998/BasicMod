@@ -1,10 +1,7 @@
 package ninetailsmod.cards.attacks;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ninetailsmod.actions.WhirlLeapAction;
 import ninetailsmod.cards.BaseCard;
@@ -32,25 +29,7 @@ public class WhirlLeap extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        addToTop(new DamageAllEnemiesAction(p, this.damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-//        dealDamageToAllEnemies(p);
         addToBot(new WhirlLeapAction(p, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
     }
 
-    private void dealDamageToAllEnemies(AbstractPlayer p) {
-//        addToBot(new WhirlLeapAction(p, this.multiDamage));
-        addToBot(new DamageAllEnemiesAction(p, this.damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if (isAnyEnemyDead()) {
-            dealDamageToAllEnemies(p);
-        }
-    }
-
-    private boolean isAnyEnemyDead() {
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (mo.currentHealth == 0 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
