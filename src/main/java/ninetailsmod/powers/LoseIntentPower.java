@@ -28,6 +28,11 @@ public class LoseIntentPower extends BasePower {
     }
 
     @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public void onInitialApplication()
     {
         // Dumb action to delay grabbing monster's intent until after it's actually set
