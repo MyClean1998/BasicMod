@@ -1,6 +1,5 @@
 package ninetailsmod.cards.attacks;
 
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import ninetailsmod.actions.WhirlLeapAction;
@@ -25,11 +24,12 @@ public class WhirlLeap extends BaseCard {
     public WhirlLeap() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE, UPG_DAMAGE);
+        this.isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new WhirlLeapAction(p, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
+        addToBot(new WhirlLeapAction(p, this.baseDamage, this.damageType));
     }
 
 }

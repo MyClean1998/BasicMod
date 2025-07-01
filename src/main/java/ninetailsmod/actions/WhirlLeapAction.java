@@ -2,6 +2,7 @@ package ninetailsmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,26 +11,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-import java.util.ArrayList;
-
 public class WhirlLeapAction extends AbstractGameAction {
 
-    public int[] damage;
-    private DamageInfo info;
+    public int baseDamage;
 
-    private float startingDuration = Settings.ACTION_DUR_FAST;
-    private ArrayList<AbstractMonster> monstersAlive = new ArrayList<>();
+    private final float startingDuration = Settings.ACTION_DUR_FAST;
 
-    public WhirlLeapAction(AbstractCreature source, DamageInfo info) {
+    public WhirlLeapAction(AbstractCreature source, int baseDamage, DamageInfo.DamageType type) {
         this.source = source;
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.DAMAGE;
-        this.info = info;
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (!mo.isDeadOrEscaped()) {
-                this.monstersAlive.add(mo);
-            }
-        }
+        this.damageType = type;
+        this.baseDamage = baseDamage;
     }
 
     public void update() {
@@ -39,24 +32,37 @@ public class WhirlLeapAction extends AbstractGameAction {
     }
 
     private void dealDamageToAllEnemies() {
-        if (!monstersAlive.isEmpty()) {
-            addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        }
+        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
+
         this.isDone = true;
         boolean hasDeath = false;
 
-        for (AbstractMonster monster: monstersAlive) {
-            if (!monster.isDying && monster.currentHealth > 0 && !monster.isEscaping) {
+        int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
+
+        // We need to recalculate the damages in case the monsters' power is updated. (e.g. 3 birds)
+        int[] reCalculatedDamages = DamageInfo.createDamageMatrix(baseDamage);
+
+        for(int i = 0; i < temp; ++i) {
+            AbstractMonster monster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+            if (!monster.isDeadOrEscaped()) {
+                monster.damage(new DamageInfo(this.source, reCalculatedDamages[i], this.damageType));
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(monster.hb.cX, monster.hb.cY, this.attackEffect, true));
-                monster.damage(this.info);
                 if (monster.isDying) {
                     hasDeath = true;
                 }
             }
         }
 
+        if (!Settings.FAST_MODE) {
+            this.addToTop(new WaitAction(0.1F));
+        }
+
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            AbstractDungeon.actionManager.clearPostCombatActions();
+        }
+
         if (hasDeath) {
-            addToBot(new WhirlLeapAction(source, this.info));
+            addToBot(new WhirlLeapAction(source, this.baseDamage, this.damageType));
         }
     }
 }
