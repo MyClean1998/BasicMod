@@ -18,6 +18,10 @@
     "NAME": "Claw",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "${modID}:FrenziedClaw": {
+    "NAME": "Frenzied Claw",
+    "DESCRIPTION": "Deal !D! damage. Deal !M! additional damage for ALL your cards containing “Claw”."
+  },
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block."
