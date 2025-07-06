@@ -122,5 +122,9 @@
     "NAME": "Mechanical Mouse",
     "DESCRIPTION": "Add a random toy card to your hand at the start of each turn.",
     "UPGRADE_DESCRIPTION": "Add a random toy card to your hand at the start of each turn. NL Innate."
+  },
+  "${modID}:Honing": {
+    "NAME": "Honing",
+    "DESCRIPTION": "All Claw cards deal !M! additional damage."
   }
 }

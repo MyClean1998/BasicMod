@@ -38,5 +38,12 @@
     "DESCRIPTIONS": [
       "Lose intent this turn."
     ]
+  },
+  "${modID}:HoningPower": {
+    "NAME": "Honing",
+    "DESCRIPTIONS": [
+      "All Claw cards deal ",
+      " additional damage."
+    ]
   }
 }
