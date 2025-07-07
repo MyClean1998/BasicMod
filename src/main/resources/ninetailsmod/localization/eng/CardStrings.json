@@ -130,5 +130,9 @@
   "${modID}:PuffedUp": {
     "NAME": "Puffed Up",
     "DESCRIPTION": "Gain !M! Strength. At the end of this turn, lose !M! strength."
+  },
+  "${modID}:Scratch": {
+    "NAME": "Scratch",
+    "DESCRIPTION": "Deal !D! damage !M! times"
   }
 }
