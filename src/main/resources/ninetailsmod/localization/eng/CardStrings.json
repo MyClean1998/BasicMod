@@ -18,10 +18,6 @@
     "NAME": "Claw",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${modID}:FrenziedClaw": {
-    "NAME": "Frenzied Claw",
-    "DESCRIPTION": "Deal !D! damage. Deal !M! additional damage for ALL your cards containing “Claw”."
-  },
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block."
@@ -33,6 +29,14 @@
   "${modID}:Disguise": {
     "NAME": "Disguise",
     "DESCRIPTION": "Gain !B! block. End your turn."
+  },
+  "${modID}:FleetingClaw": {
+    "NAME": "Fleeting Claw",
+    "DESCRIPTION": "Deal !D! damage. If the damage is unblocked, draw 2 cards."
+  },
+  "${modID}:FrenziedClaw": {
+    "NAME": "Frenzied Claw",
+    "DESCRIPTION": "Deal !D! damage. Deal !M! additional damage for ALL your cards containing “Claw”."
   },
   "${modID}:GodFather": {
     "NAME": "Godfather",
