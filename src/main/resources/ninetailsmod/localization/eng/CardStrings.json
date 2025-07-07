@@ -126,5 +126,9 @@
   "${modID}:Honing": {
     "NAME": "Honing",
     "DESCRIPTION": "All Claw cards deal !M! additional damage."
+  },
+  "${modID}:PuffedUp": {
+    "NAME": "Puffed Up",
+    "DESCRIPTION": "Gain !M! Strength. At the end of this turn, lose !M! strength."
   }
 }
