@@ -14,55 +14,71 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 public class WhirlLeapAction extends AbstractGameAction {
 
     public int baseDamage;
+    public int[] damage;
 
-    private final float startingDuration = Settings.ACTION_DUR_FAST;
+    private boolean firstFrame;
 
     public WhirlLeapAction(AbstractCreature source, int baseDamage, DamageInfo.DamageType type) {
+        this.firstFrame = true;
         this.source = source;
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.DAMAGE;
         this.damageType = type;
         this.baseDamage = baseDamage;
+        this.duration = Settings.ACTION_DUR_FAST;
     }
 
     public void update() {
-        if (this.duration == this.startingDuration) {
-            dealDamageToAllEnemies();
-        }
-    }
-
-    private void dealDamageToAllEnemies() {
-        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-
-        this.isDone = true;
-        boolean hasDeath = false;
-
-        int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
-
-        // We need to recalculate the damages in case the monsters' power is updated. (e.g. 3 birds)
-        int[] reCalculatedDamages = DamageInfo.createDamageMatrix(baseDamage);
-
-        for(int i = 0; i < temp; ++i) {
-            AbstractMonster monster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
-            if (!monster.isDeadOrEscaped()) {
-                monster.damage(new DamageInfo(this.source, reCalculatedDamages[i], this.damageType));
-                AbstractDungeon.effectList.add(new FlashAtkImgEffect(monster.hb.cX, monster.hb.cY, this.attackEffect, true));
-                if (monster.isDying) {
-                    hasDeath = true;
+        if (this.firstFrame) {
+            boolean playedMusic = false;
+            int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
+            // We need to recalculate the damages in case the monsters' power is updated. (e.g. 3 birds)
+            this.damage = DamageInfo.createDamageMatrix(this.baseDamage);
+            
+            for(int i = 0; i < temp; ++i) {
+                AbstractMonster monster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+                if (!monster.isDying && monster.currentHealth > 0 && !monster.isEscaping) {
+                    if (playedMusic) {
+                        AbstractDungeon.effectList.add(new FlashAtkImgEffect((AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cX, (AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cY, this.attackEffect, true));
+                    } else {
+                        playedMusic = true;
+                        AbstractDungeon.effectList.add(new FlashAtkImgEffect((AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cX, (AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).hb.cY, this.attackEffect));
+                    }
                 }
             }
+
+            this.firstFrame = false;
         }
 
-        if (!Settings.FAST_MODE) {
-            this.addToTop(new WaitAction(0.1F));
-        }
+        this.tickDuration();
+        if (this.isDone) {
 
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            AbstractDungeon.actionManager.clearPostCombatActions();
-        }
+            boolean hasDeath = false;
+            int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
 
-        if (hasDeath) {
-            addToBot(new WhirlLeapAction(source, this.baseDamage, this.damageType));
+            for (int i = 0; i < temp; ++i) {
+                AbstractMonster monster = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+                if (!monster.isDeadOrEscaped()) {
+                    monster.damage(new DamageInfo(this.source, damage[i], this.damageType));
+                    if (monster.isDying) {
+                        hasDeath = true;
+                    }
+                }
+            }
+
+            if (!Settings.FAST_MODE) {
+                this.addToTop(new WaitAction(0.1F));
+            }
+
+            if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                AbstractDungeon.actionManager.clearPostCombatActions();
+            }
+
+            if (hasDeath) {
+                // Add to top so it won't be affected by pen nip.
+                addToTop(new WhirlLeapAction(source, this.baseDamage, this.damageType));
+                addToTop(new VFXAction(new DieDieDieEffect(), 0.7F));
+            }
         }
     }
 }

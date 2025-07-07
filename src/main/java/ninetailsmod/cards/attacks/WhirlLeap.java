@@ -1,7 +1,9 @@
 package ninetailsmod.cards.attacks;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import ninetailsmod.actions.WhirlLeapAction;
 import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
@@ -29,6 +31,7 @@ public class WhirlLeap extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
         addToBot(new WhirlLeapAction(p, this.baseDamage, this.damageType));
     }
 
