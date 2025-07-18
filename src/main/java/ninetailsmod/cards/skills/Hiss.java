@@ -42,7 +42,11 @@ public class Hiss extends BaseCard {
         if (this.energyOnUse != -1)
             effect = this.energyOnUse;
         if (this.upgraded)
-            effect = effect + 2;
+            effect ++;
+        if (p.hasRelic("Chemical X")) {
+            effect += 2;
+            p.getRelic("Chemical X").flash();
+        }
         if (effect > 0) {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
                 addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -effect), -effect, true, AbstractGameAction.AttackEffect.NONE));

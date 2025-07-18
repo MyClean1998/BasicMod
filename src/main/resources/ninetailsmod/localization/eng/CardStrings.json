@@ -59,7 +59,7 @@
   "${modID}:Hiss": {
     "NAME": "Hiss",
     "DESCRIPTION": "All enemies lose X strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "All enemies lose X+2 strength. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "All enemies lose X+1 strength. NL Exhaust."
   },
   "${modID}:LaserEyes": {
     "NAME": "Laser Eyes",
