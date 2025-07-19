@@ -14,6 +14,14 @@
     "DESCRIPTION": "The next time you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust",
     "UPGRADE_DESCRIPTION": "The next !M! times you would receive 5 or more unblocked attack damage, reduce it to 5. NL Exhaust"
   },
+  "${modID}:Ball": {
+    "NAME": "Ball",
+    "DESCRIPTION": "Draw !M! cards. NL Discard a card at random. NL Exhaust."
+  },
+  "${modID}:CatnipChewStick": {
+    "NAME": "Catnip Chew Stick",
+    "DESCRIPTION": "Draw !M! cards. NL Randomize the cost of your hand. NL Exhaust."
+  },
   "${modID}:Claw": {
     "NAME": "Claw",
     "DESCRIPTION": "Deal !D! damage."
@@ -29,6 +37,18 @@
   "${modID}:Disguise": {
     "NAME": "Disguise",
     "DESCRIPTION": "Gain !B! block. End your turn."
+  },
+  "${modID}:ElectronicFish": {
+    "NAME": "Electronic Fish",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Exhaust."
+  },
+  "${modID}:FeatherWand": {
+    "NAME": "Feather Wand",
+    "DESCRIPTION": "Gain !M! dexterity, lose !M! dexterity at the end of your turn. NL Exhaust."
+  },
+  "${modID}:FlappingBird": {
+    "NAME": "Flapping Bird",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
   },
   "${modID}:FleetingClaw": {
     "NAME": "Fleeting Claw",
@@ -52,10 +72,6 @@
     "DESCRIPTION": "Ethereal. NL Clear all negative effects. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
   },
-  "${modID}:InfiniteSlash": {
-    "NAME": "Infinite Slash",
-    "DESCRIPTION": "Whenever you play a Claw card, draw 1 card."
-  },
   "${modID}:Hide": {
     "NAME": "Hide",
     "DESCRIPTION": "Gain !B! block. Block is not removed at the start of your next turn"
@@ -65,9 +81,22 @@
     "DESCRIPTION": "All enemies lose X strength. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "All enemies lose X+1 strength. NL Exhaust."
   },
+  "${modID}:Honing": {
+    "NAME": "Honing",
+    "DESCRIPTION": "All Claw cards deal !M! additional damage."
+  },
+  "${modID}:InfiniteSlash": {
+    "NAME": "Infinite Slash",
+    "DESCRIPTION": "Whenever you play a Claw card, draw 1 card."
+  },
   "${modID}:LaserEyes": {
     "NAME": "Laser Eyes",
     "DESCRIPTION": "Deal !D! damage to all enemies and apply !M! weak."
+  },
+  "${modID}:MechanicalMouse": {
+    "NAME": "Mechanical Mouse",
+    "DESCRIPTION": "Add a random toy card to your hand at the start of each turn.",
+    "UPGRADE_DESCRIPTION": "Add a random toy card to your hand at the start of each turn. NL Innate."
   },
   "${modID}:MelodyAttack": {
     "NAME": "Melody Attack",
@@ -77,13 +106,22 @@
     "NAME": "Pounce",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, gain !M! energy."
   },
-  "${modID}:WhirlLeap": {
-    "NAME": "Whirl Leap",
-    "DESCRIPTION": "Deal !D! damage to all enemies, if an enemy dies, deal damage again."
-  },
   "${modID}:ProfilePic": {
     "NAME": "Profile Picture",
     "DESCRIPTION": "Add a copy of the first card you play each turn to your hand."
+  },
+  "${modID}:PuffedUp": {
+    "NAME": "Puffed Up",
+    "DESCRIPTION": "Gain !M! Strength. At the end of this turn, lose !M! strength."
+  },
+  "${modID}:Scratch": {
+    "NAME": "Scratch",
+    "DESCRIPTION": "Deal !D! damage !M! times"
+  },
+  "${modID}:ShredThePlush": {
+    "NAME": "Shred The Plush",
+    "DESCRIPTION": "Can only be played if there are at least !M! Claw cards in your hand. NL Deal !D! damage 6 times.",
+    "UPGRADE_DESCRIPTION": "Can only be played if there are at least !M! Claw cards in your hand."
   },
   "${modID}:Stealth": {
     "NAME": "Stealth",
@@ -98,58 +136,20 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${modID}:Zoomie": {
-    "NAME": "Zoomie",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
-  },
-  "${modID}:Ball": {
-    "NAME": "Ball",
-    "DESCRIPTION": "Draw !M! cards. NL Discard a card at random. NL Exhaust."
-  },
-  "${modID}:FeatherWand": {
-    "NAME": "Feather Wand",
-    "DESCRIPTION": "Gain !M! dexterity, lose !M! dexterity at the end of your turn. NL Exhaust."
-  },
-  "${modID}:FlappingBird": {
-    "NAME": "Flapping Bird",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
-  },
-  "${modID}:ElectronicFish": {
-    "NAME": "Electronic Fish",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Exhaust."
-  },
   "${modID}:ToyMouse": {
     "NAME": "Toy Mouse",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! vulnerable. NL Exhaust."
-  },
-  "${modID}:CatnipChewStick": {
-    "NAME": "Catnip Chew Stick",
-    "DESCRIPTION": "Draw !M! cards. NL Randomize the cost of your hand. NL Exhaust."
   },
   "${modID}:Tunnel": {
     "NAME": "Tunnel",
     "DESCRIPTION": "Exhaust a card. NL Draw !M! additional cards next turn. NL Exhaust."
   },
-  "${modID}:MechanicalMouse": {
-    "NAME": "Mechanical Mouse",
-    "DESCRIPTION": "Add a random toy card to your hand at the start of each turn.",
-    "UPGRADE_DESCRIPTION": "Add a random toy card to your hand at the start of each turn. NL Innate."
+  "${modID}:WhirlLeap": {
+    "NAME": "Whirl Leap",
+    "DESCRIPTION": "Deal !D! damage to all enemies, if an enemy dies, deal damage again."
   },
-  "${modID}:Honing": {
-    "NAME": "Honing",
-    "DESCRIPTION": "All Claw cards deal !M! additional damage."
+  "${modID}:Zoomie": {
+    "NAME": "Zoomie",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
   },
-  "${modID}:PuffedUp": {
-    "NAME": "Puffed Up",
-    "DESCRIPTION": "Gain !M! Strength. At the end of this turn, lose !M! strength."
-  },
-  "${modID}:Scratch": {
-    "NAME": "Scratch",
-    "DESCRIPTION": "Deal !D! damage !M! times"
-  },
-  "${modID}:ShredThePlush": {
-    "NAME": "Shred The Plush",
-    "DESCRIPTION": "Can only be played if there are at least !M! Claw cards in your hand. NL Deal !D! damage 6 times.",
-    "UPGRADE_DESCRIPTION": "Can only be played if there are at least !M! Claw cards in your hand."
-  }
 }
