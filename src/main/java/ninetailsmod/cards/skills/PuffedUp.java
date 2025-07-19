@@ -22,7 +22,7 @@ public class PuffedUp extends BaseCard {
 
     public PuffedUp() {
         super(ID, info);
-        setMagic(3, 2);
+        setMagic(5, 3);
     }
 
     @Override
