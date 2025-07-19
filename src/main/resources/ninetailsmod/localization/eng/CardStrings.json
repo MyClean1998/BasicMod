@@ -134,5 +134,10 @@
   "${modID}:Scratch": {
     "NAME": "Scratch",
     "DESCRIPTION": "Deal !D! damage !M! times"
+  },
+  "${modID}:ShredThePlush": {
+    "NAME": "Shred The Plush",
+    "DESCRIPTION": "Can only be played if there are at least !M! Claw cards in your hand. NL Deal !D! damage 6 times.",
+    "UPGRADE_DESCRIPTION": "Can only be played if there are at least !M! Claw cards in your hand."
   }
 }
