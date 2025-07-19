@@ -26,7 +26,7 @@ public class Scratch extends BaseCard {
     public Scratch() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
 
-        setDamage(4);
+        setDamage(3);
         setMagic(TIMES, UPG_TIMES);
     }
 
