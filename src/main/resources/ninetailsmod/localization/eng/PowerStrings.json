@@ -27,6 +27,12 @@
       "If you did not play any attack cards in a turn, #yretain your hand this turn."
     ]
   },
+  "${modID}:InfiniteSlashPower": {
+    "NAME": "Infinite Slash",
+    "DESCRIPTIONS": [
+      "Whenever you play a Claw card, draw 1 card"
+    ]
+  },
   "${modID}:MechanicalMousePower": {
     "NAME": "Mechanical Mouse",
     "DESCRIPTIONS": [

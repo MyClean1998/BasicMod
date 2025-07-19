@@ -52,6 +52,10 @@
     "DESCRIPTION": "Ethereal. NL Clear all negative effects. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Clear all negative effects. NL Exhaust"
   },
+  "${modID}:InfiniteSlash": {
+    "NAME": "Infinite Slash",
+    "DESCRIPTION": "Whenever you play a Claw card, draw 1 card."
+  },
   "${modID}:Hide": {
     "NAME": "Hide",
     "DESCRIPTION": "Gain !B! block. Block is not removed at the start of your next turn"
