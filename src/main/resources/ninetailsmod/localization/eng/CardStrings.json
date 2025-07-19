@@ -40,8 +40,8 @@
   },
   "${modID}:GodFather": {
     "NAME": "Godfather",
-    "DESCRIPTION": "Gain X strength and X dexterity.",
-    "UPGRADE_DESCRIPTION": "Gain X+1 strength and X+1 dexterity."
+    "DESCRIPTION": "Ethereal. NL Gain X strength and X dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain X strength and X dexterity."
   },
   "${modID}:Grace": {
     "NAME": "Grace",

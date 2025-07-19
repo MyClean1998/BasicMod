@@ -23,6 +23,7 @@ public class GodFather extends BaseCard {
 
     public GodFather() {
         super(ID, info); //Pass the required information to the BaseCard constructor.
+        setEthereal(true, false);
     }
 
     @Override
@@ -34,8 +35,6 @@ public class GodFather extends BaseCard {
             effect += 2;
             p.getRelic("Chemical X").flash();
         }
-        if (this.upgraded)
-            effect++;
         if (effect > 0) {
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, effect)));
             addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, effect)));
