@@ -136,6 +136,10 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "${modID}:ToyHoard": {
+    "NAME": "Toy Hoard",
+    "DESCRIPTION": "Add !M! random Toy cards into your hand. NL Exhaust."
+  },
   "${modID}:ToyMouse": {
     "NAME": "Toy Mouse",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! vulnerable. NL Exhaust."
@@ -151,5 +155,5 @@
   "${modID}:Zoomie": {
     "NAME": "Zoomie",
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! block. NL Draw !M! cards."
-  },
+  }
 }

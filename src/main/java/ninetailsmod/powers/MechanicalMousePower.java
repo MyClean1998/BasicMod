@@ -1,15 +1,11 @@
 package ninetailsmod.powers;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import ninetailsmod.BasicMod;
-import ninetailsmod.cards.BaseCard;
 
-import java.util.ArrayList;
+import static ninetailsmod.util.ToyCardUtils.getToyCard;
 
 public class MechanicalMousePower extends BasePower {
     public static final String ID = BasicMod.makeID(MechanicalMousePower.class.getSimpleName());
@@ -28,16 +24,5 @@ public class MechanicalMousePower extends BasePower {
             for (int i = 0; i < this.amount; i++)
                 addToBot(new MakeTempCardInHandAction(getToyCard().makeCopy(), 1, false));
         }
-    }
-
-    private static AbstractCard getToyCard() {
-        ArrayList<AbstractCard> cards = CardLibrary.getAllCards();
-        CardGroup toyCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        for (AbstractCard c : cards) {
-            if (c.hasTag(BaseCard.CustomTags.TOY)) {
-                toyCards.addToBottom(c);
-            }
-        }
-        return toyCards.getRandomCard(AbstractDungeon.cardRandomRng);
     }
 }
