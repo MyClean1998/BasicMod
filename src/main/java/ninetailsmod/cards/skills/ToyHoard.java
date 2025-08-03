@@ -1,13 +1,11 @@
 package ninetailsmod.cards.skills;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import ninetailsmod.actions.ToyHoardAction;
 import ninetailsmod.cards.BaseCard;
 import ninetailsmod.characters.NineTailsCharacter;
 import ninetailsmod.util.CardStats;
-
-import static ninetailsmod.util.ToyCardUtils.getToyCard;
 
 public class ToyHoard extends BaseCard {
 
@@ -28,9 +26,9 @@ public class ToyHoard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInHandAction(getToyCard().makeCopy(), 1, false));
+        addToBot(new ToyHoardAction(1));
         if (this.upgraded) {
-            addToBot(new MakeTempCardInHandAction(getToyCard().makeCopy(), 1, false));
+            addToBot(new ToyHoardAction(1));
         }
     }
 }

@@ -138,7 +138,8 @@
   },
   "${modID}:ToyHoard": {
     "NAME": "Toy Hoard",
-    "DESCRIPTION": "Add !M! random Toy cards into your hand. NL Exhaust."
+    "DESCRIPTION": "Choose 1 of 3 random Toy cards to add into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 of 3 random Toy cards to add into your hand twice. NL Exhaust."
   },
   "${modID}:ToyMouse": {
     "NAME": "Toy Mouse",
